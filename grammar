@@ -1,0 +1,16 @@
+
+program =
+  | EOF
+  | statement program
+
+statement =
+  | expression ";"
+  | variable-declaration
+  | function-declaration
+  | condition-or-loop
+
+variable-declaration =
+  | "let" [ "mut" ] IDENTIFIER [ ":" expression ] [ "=" expression ] ";"
+  | "const" IDENTIFIER [ ":" expression ] "=" expression ";"
+
+
